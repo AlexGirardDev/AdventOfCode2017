@@ -7,6 +7,7 @@ using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using AdventOfCode2017.Puzzles.Day1;
+using AdventOfCode2017.Puzzles.Day2;
 
 namespace AdventOfCode2017
 {
@@ -15,6 +16,7 @@ namespace AdventOfCode2017
         static void Main(string[] args)
         {
             Day1.Solve();
+            Day2.Solve();
             Console.ReadKey();
         }
     }

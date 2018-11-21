@@ -8,8 +8,11 @@ namespace AdventOfCode2017.Puzzles.Day1
     {
         public static void Solve()
         {
+            Console.WriteLine($"===Day 1===");
             string puzzleInput = File.ReadAllText("../../Input/Day1.txt");
+          
 
+            
             var numberList = puzzleInput.Select(x => (int)Char.GetNumericValue(x)).ToArray();
             var numberTotal = 0;
             for (var index = 0; index < numberList.Length; index++)
@@ -21,7 +24,9 @@ namespace AdventOfCode2017.Puzzles.Day1
                     numberTotal += number;
                 }
             }
-            Console.WriteLine($"Day 1: {numberTotal}");
+
+            Console.WriteLine($"Part 1: {numberTotal}");
+
         }
     }
 }
