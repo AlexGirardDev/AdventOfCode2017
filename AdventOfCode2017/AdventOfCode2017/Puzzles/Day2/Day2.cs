@@ -14,7 +14,7 @@ namespace AdventOfCode2017.Puzzles.Day2
 
             var puzzleInputArray = puzzleInput.Select(s => s.Split(null).ToList().Select(x => (int) int.Parse(x)).ToList()).ToList();
 
-            {
+            {//Part 1
                 var total = 0;
                 foreach (var input in puzzleInputArray)
                 {
@@ -22,6 +22,12 @@ namespace AdventOfCode2017.Puzzles.Day2
                 }
 
                 Console.WriteLine($"Part 1: {total}");
+            }
+
+            {//Part 2
+                var total = puzzleInputArray.Sum(z=>z.Select(x => z.FirstOrDefault(y => y % x == 0 && x != y) / x).First(x => x > 0));
+                //TODO come back and do this linearly later 
+                Console.WriteLine($"Part 2: {total}");
             }
 
         }
