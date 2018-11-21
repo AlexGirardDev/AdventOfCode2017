@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Puzzles\Day3\Day3.cs" />
     <Compile Include="Puzzles\Day2\Day2.cs" />
     <Compile Include="Puzzles\Day1\Day1.cs" />
     <Compile Include="Program.cs" />
@@ -52,8 +53,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Input\Day3.txt" />
     <Content Include="Input\Day2.txt" />
     <Content Include="Input\Day1.txt" />
+    <Content Include="Puzzles\Day3\Puzzle.txt" />
     <Content Include="Puzzles\Day2\Puzzle.txt" />
     <Content Include="Puzzles\Day1\Puzzle.txt" />
   </ItemGroup>
