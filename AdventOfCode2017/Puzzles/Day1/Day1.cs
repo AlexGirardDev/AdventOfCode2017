@@ -9,7 +9,7 @@ namespace AdventOfCode2017.Puzzles.Day1
         public static void Solve()
         {
             Console.WriteLine($"===Day 1===");
-            string puzzleInput = File.ReadAllText("../../Input/Day1.txt");
+            string puzzleInput = File.ReadAllText("../../../Input/Day1.txt");
           
 
             
