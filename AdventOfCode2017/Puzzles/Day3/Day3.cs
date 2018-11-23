@@ -4,7 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 
-namespace AdventOfCode2017.Puzzles.Day2
+namespace AdventOfCode2017.Puzzles.Day3
 {
     public static class Day3
     {
