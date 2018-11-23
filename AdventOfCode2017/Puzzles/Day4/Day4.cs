@@ -20,6 +20,21 @@ namespace AdventOfCode2017.Puzzles.Day4
                 Console.WriteLine($"Part 1: {result}");
 
             }
+
+            { //Part 2
+                List<List<string>> puzzleList2 = new List<List<string>>();
+                foreach (var p in puzzleList)
+                {
+                    List<string> stringList = new List<string>();
+                    foreach (var  s in p)
+                    {
+                        stringList.Add(item: String.Concat(s.OrderBy(c => c)));
+                    }
+                    puzzleList2.Add(stringList);
+                }
+                var result = puzzleList2.Count - puzzleList2.Count(x => x.OrderBy(y=>y).ToList().Distinct().Count() != x.Count);
+                Console.WriteLine($"Part 1: {result}");
+            }
         }
     }
 }
