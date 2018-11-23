@@ -2,52 +2,63 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 
 namespace AdventOfCode2017.Puzzles.Day2
 {
     public static class Day3
     {
-        private static readonly List<List<int>> _intList = new List<List<int>>();
-        
         public static void Solve()
         {
             Console.WriteLine("===Day 3===");
-            var puzzleInput = int.Parse(File.ReadAllText("../../../Input/Day3.txt"));
+            var puzzleInput = int.Parse(File.ReadAllText("../../../../Input/Day3.txt"));
 
             {//Part 1
+                int[,] array = new int[20_000, 20_000];//This doesnt scale if the number was very large but it was alot easier than having the array grow
                 var direction = Direction.Right;
 
-                _intList.Add(new List<int>{1});
-                _intList[0].Add(2);
-                int x = 2;
-                int y = 0;
-                var lol = _intList[0][1];
-                for (int i = 2; i < 100; i++)
+
+                short x = 10_000;
+                short y = 10_000;
+
+
+                for (int i = 1; i < puzzleInput; i++)
                 {
 
                     switch (direction)
                     {
                         case Direction.Right:
-                            if (y == 0 && x== _intList[x].Count)
-                            {
-                                _intList.Insert(0, Enumerable.Repeat(0, _intList[x].Count).ToList());
-                            }
+                            array[x,y] = i;
+                            x++;
+                            if (array[x, y - 1] == 0)
+                                direction = Direction.Up;
                             break;
                         case Direction.Up:
+                            array[x, y] = i;
+                            y--;
+                            if (array[x-1, y] == 0)
+                                direction = Direction.Left;
                             break;
                         case Direction.Left:
+                            array[x, y] = i;
+                            x--;
+                            if (array[x, y+1] == 0)
+                                direction = Direction.Down;
                             break;
                         case Direction.Down:
+                            array[x, y] = i;
+                            y++;
+                            if (array[x+1, y] == 0)
+                                direction = Direction.Right;
                             break;
                     }
                 }
+                var answer = (10_000 - x) + (y - 10_000);
+                Console.WriteLine($"Part 2: {answer}");
+              
             }
-        }
 
-        private static int GetIntAtIndex(int x, int y)
-        {
 
-            return _intList[y][x];
         }
     }
     
